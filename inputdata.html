@@ -1,165 +1,78 @@
 <html>
-    <head>
-        <title>
-            WEB INFORMATIKA C 2026 
-        </title>
-    </head>
-    <body>
-        <h1>
-            WEB INFORMATIKA ANA 2026
-        </h1>
-        <hr>
-        <table border = "1" cellspacing ="0" cellpadding ="10px">
-            <tr>
-                <td>
-                    <a href="index.html">Home</a>
-                </td>
-                <td><a href="profile.html">Profile</a>
-                </td>
-                <td><a href="contact.html">Contact</a>
-                </td>
-                <td><a href="mahasiswa.html">Data Mahasiswa</a>
-                </td>
-            </tr>
-        </table>
-        <h2>Input Data Mahasiswa</h2>
-        <from>
-            <Table border="0">
-                <tr>
-                    <td><label for="nama"> Nama</label></td>
-                    <td>:</td>
-                    <td><input type="number" name="uts" id="uts"/></td>
-                </tr>
-                <tr>
-                    <td><label for="uas"> UAS</label></td>
-                    <td>:</td>
-                    <td><input type="number" name="uas" id="uas"/></td>
-                </tr>
-                <tr>
-                    <td><label for="tugas"> TUGAS</label></td>
-                    <td>:</td>
-                    <td><input type="number" name="tugas" id="tugas"/></td>
-                </tr>
-                 <tr>
-                    <td><label for="foto"> FOTO</label></td>
-                    <td>:</td>
-                    <td><input type="file" name="foto" id="foto"/></td>
+<head>
+    <title>WEB INFORMATIKA C 2026</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
 
-            </Table>
-            <input type="submit" name="submit" value="Kirim Data">
-        </from>
-        <hr>
- </head>
-<body>
+<body class="mahasiswa">
+    <header>
+        <h1>WEB INFORMATIKA ANA 2026</h1>
+    </header> 
 
-<h2> Tugas Input Data</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+        <a href="mahasiswa.html">Data Mahasiswa</a>
+    </nav>
 
-<form>
-    <table>
+    <div class="container">
+        <div class="card">
+            <h2>Tugas Input Data</h2>
+            
+            <form>
+                <table border="0" cellpadding="10">
+                    <tr>
+                        <td>Nama</td>
+                        <td>:</td>
+                        <td><input type="text" name="nama"></td>
+                    </tr>
+                    <tr>
+                        <td>NIM</td>
+                        <td>:</td>
+                        <td><input type="number" name="nim"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td><input type="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td>:</td>
+                        <td><input type="date" name="tgl_lahir"></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td>:</td>
+                        <td>
+                            <input type="radio" name="jk"> Laki-laki
+                            <input type="radio" name="jk"> Perempuan
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jurusan</td>
+                        <td>:</td>
+                        <td>
+                            <select name="jurusan">
+                                <option>Teknik Informatika</option>
+                                <option>Sistem Informasi</option>
+                                <option>Manajemen Informatika</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <input type="submit" value="Kirim Data" style="padding: 10px 20px;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
 
-        <tr>
-           <td>Nama</td>
-           <td>:</td>
-           <td><input type="text" name="nama"></td>
-        </tr>
-
-        <tr>
-           <td>NIM</td>
-           <td>:</td>
-           <td><input type="number" name="nim"></td>
-        </tr>
-
-        <tr>
-           <td>Password</td>
-           <td>:</td>
-           <td><input type="password" name="password"></td>
-        </tr>
-
-        <tr>
-           <td>Email</td>
-           <td>:</td>
-           <td><input type="email" name="email"></td>
-        </tr>
-
-        <tr>
-           <td>No HP</td>
-           <td>:</td>
-           <td><input type="tel" name="nohp"></td>
-        </tr>
-
-        <tr>
-           <td>Website Pribadi</td>
-           <td>:</td>
-           <td><input type="url" name="website"></td>
-        </tr>
-
-        <tr>
-          <td>Tanggal Lahir</td>
-          <td>:</td>
-          <td><input type="date" name="tgl_lahir"></td>
-        </tr>
-
-        <tr>
-           <td>Warna Favorit</td>
-           <td>:</td>
-           <td><input type="color" name="warna"></td>
-        </tr>
-
-        <tr>
-           <td>Tingkat Kepuasan</td>
-           <td>:</td>
-           <td><input type="range" name="kepuasan" min="1" max="10"></td>
-        </tr>
-
-        <tr>
-           <td>Jenis Kelamin</td>
-           <td>:</td>
-           <td>
-           <input type="radio" name="jk"> Laki-laki
-           <input type="radio" name="jk"> Perempuan
-        </td>
-        </tr>
-
-        <tr>
-           <td>Hobi</td>
-           <td>:</td>
-           <td>
-              <input type="checkbox"> Membaca
-              <input type="checkbox"> Memasak
-              <input type="checkbox"> Olahraga
-            </td>
-         </tr>
-
-          <tr>
-             <td>Upload Foto</td>
-             <td>:</td>
-             <td><input type="file"></td>
-             </tr>
-
-           <tr>
-             <td>Alamat</td>
-             <td>:</td>
-             <td><textarea></textarea></td>
-            </tr>
-
-            <tr>
-              <td>Jurusan</td>
-              <td>:</td>
-              <td>
-              <select>
-                <option>Teknik Informatika</option>
-                <option>Sistem Informasi</option>
-                <option>Manajemen Informatika</option>
-              </select>
-          </td>
-         </tr>
-         <tr>
-           <td colspan="3">
-               <input type="submit" value="Kirim Data">
-              </td>
-            </tr>
-          </table>
-          </form>
-         </body>
-        </html>
-  
+    <footer>
+        &copy; 2026 Informatika
+    </footer>
+</body>
+</html>
