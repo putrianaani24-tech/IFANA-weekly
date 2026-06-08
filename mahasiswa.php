@@ -1,7 +1,11 @@
 <?php
-  $koneksi = mysqli_connect("localhost","root", "", "ifanaweekly");
-  $query = "SELECT * FROM mahasiswa";
-  $result = mysqli_query($koneksi, $query);
+
+ require 'fungsi.php';
+
+  $qmahasiswa = "SELECT * FROM mahasiswa"; /// karena query ke tabel mahsiswa
+
+  $mahasiswas = tampildata($qmahasiswa);/// menghasilkan data mahasiswa dalam wadah
+
 ?>
 
 
@@ -47,7 +51,8 @@
                         <th>Aksi</th>
                     </tr>
                    <?php
-                     while ($mhs = mysqli_fetch_row($result))
+                   $no = 1;
+                     foreach($mahasiswas as $mhs)
                      {
                     ?>
                 </thead>
@@ -59,7 +64,7 @@
                         <td align="center"><?= $mhs[3] ?></td>
                         <td align="center"><?= $mhs[4] ?></td>
                         <td><?= $mhs[5] ?></td>
-                        <td><img src="assets/images/<?= $mhs[6] ?>" width="50px" height="50px"/></td>
+                        <td><img src="assets/images/<?= $mhs[5] ?>" width="50px" height="50px"/></td>
                     <td>
                     <a href="ubahdata.php" stlye=""><button>Edit</button></a> 
                     <a href="hapusdata.php" ><button>Hapus</button></a>

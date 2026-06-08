@@ -1,3 +1,27 @@
+<?php
+
+  require 'fungsi.php';
+
+    if(isset($_POST["submit"]))
+    {
+        /// ketika ada data yangn dikirim ke db kirim notifnya
+        if(tambahdata($_POST)> 0)
+        {
+            echo "<script>
+            alert('Data Berhasil Ditambahkan!');
+            window.loction.href='mahasiswa.php';
+            </script>";
+        }
+        else
+            {
+            echo "<script>
+            alert('Data Gagal Ditambahkan!');
+            window.loction.href='mahasiswa.php';
+            </script>";
+            }
+    }
+?>
+
 <html>
 <head>
     <title>WEB INFORMATIKA C 2026</title>
@@ -18,52 +42,45 @@
 
     <div class="container">
         <div class="card">
-            <h2>Tugas Input Data</h2>
+
+            <h2>Input Data</h2>
             
-            <form>
+            <form action="" method="post">
                 <table border="0" cellpadding="10">
                     <tr>
                         <td>Nama</td>
                         <td>:</td>
-                        <td><input type="text" name="nama"></td>
+                        <td><input type="text" name="nama"  id = "nama" required ></td>
                     </tr>
                     <tr>
                         <td>NIM</td>
                         <td>:</td>
-                        <td><input type="number" name="nim"></td>
+                        <td><input type="number" name="nim" id = "nim" required ></td>
                     </tr>
                     <tr>
-                        <td>Email</td>
+                        <td>Program Studi</td>
                         <td>:</td>
-                        <td><input type="email" name="email"></td>
+                        <td><input type="text" name="jurusan" id = "Prodi" required ></td>
+                    </tr>
+                     <tr>
+                         <td>Email</td>
+                        <td>:</td>
+                        <td><input type="email" name="email" id = "email" ></td>
                     </tr>
                     <tr>
-                        <td>Tanggal Lahir</td>
+                        <td>No Hp</td>
                         <td>:</td>
-                        <td><input type="date" name="tgl_lahir"></td>
+                        <td><input type="number" name="no_hp" id ="no_hp" ></td>
                     </tr>
+
                     <tr>
-                        <td>Jenis Kelamin</td>
+                        <td>Foto</td>
                         <td>:</td>
-                        <td>
-                            <input type="radio" name="jk"> Laki-laki
-                            <input type="radio" name="jk"> Perempuan
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Jurusan</td>
-                        <td>:</td>
-                        <td>
-                            <select name="jurusan">
-                                <option>Teknik Informatika</option>
-                                <option>Sistem Informasi</option>
-                                <option>Manajemen Informatika</option>
-                            </select>
-                        </td>
+                        <td><input type="text" name="foto" id = "foto"></td>
                     </tr>
                     <tr>
                         <td colspan="3" align="center">
-                            <input type="submit" value="Kirim Data" style="padding: 10px 20px;">
+                            <input type="submit"name = "submit" value="Kirim Data" style="padding: 10px 20px;">
                         </td>
                     </tr>
                 </table>
