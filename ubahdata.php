@@ -2,21 +2,31 @@
 
   require 'fungsi.php';
 
+
+  $id =$_GET["id"];
+
+  $query = "SELECT * FROM mahasiswa WHERE id=$id";
+
+  $mhs = tampildata($query)[0]; /// data isinya data spesifik id
+
+  
+
+
     if(isset($_POST["submit"]))
     {
-        /// ketika ada data yangn dikirim ke db kirim notifnya
-        if(tambahdata($_POST, $_FILES["foto"])> 0)
+        /// ketika ada data yangn diedit ke db kirim notifnya
+        if(ubahdata($_POST, $id)> 0)
         {
             echo "<script>
-            alert('Data Berhasil Ditambahkan!');
-            window.loction.href='mahasiswa.php';
+            alert('Data Berhasil Diubah!');
+            window.location.href='mahasiswa.php';
             </script>";
         }
         else
             {
             echo "<script>
-            alert('Data Gagal Ditambahkan!');
-            window.loction.href='mahasiswa.php';
+            alert('Data Gagal Diubah!');
+            window.location.href='mahasiswa.php';
             </script>";
             }
     }
@@ -43,44 +53,44 @@
     <div class="container">
         <div class="card">
 
-            <h2>Input Data Mahasiswa</h2>
+            <h2>Ubah Data</h2>
             
-            <form action="" method="post" enctype="multipart/form-data" >
+            <form action="" method="post">
                 <table border="0" cellpadding="10">
                     <tr>
                         <td>Nama</td>
                         <td>:</td>
-                        <td><input type="text" name="nama"  id = "nama" required ></td>
+                        <td><input type="text" name="nama"  id = "nama" value="<?=$mhs[1]?>" required ></td>
                     </tr>
                     <tr>
                         <td>NIM</td>
                         <td>:</td>
-                        <td><input type="number" name="nim" id = "nim" required ></td>
+                        <td><input type="number" name="nim" id = "nim" value="<?=$mhs[2]?>" required ></td>
                     </tr>
                     <tr>
                         <td>Program Studi</td>
                         <td>:</td>
-                        <td><input type="text" name="jurusan" id = "Prodi" required ></td>
+                        <td><input type="text" name="jurusan" id = "Prodi"value="<?=$mhs[3]?>" required ></td>
                     </tr>
                      <tr>
                          <td>Email</td>
                         <td>:</td>
-                        <td><input type="email" name="email" id = "email" ></td>
+                        <td><input type="email" name="email" id = "email"value="<?=$mhs[4]?>" ></td>
                     </tr>
                     <tr>
                         <td>No Hp</td>
                         <td>:</td>
-                        <td><input type="number" name="no_hp" id ="no_hp" ></td>
+                        <td><input type="number" name="no_hp" id ="no_hp"value="<?=$mhs[5]?>" ></td>
                     </tr>
 
                     <tr>
                         <td>Foto</td>
                         <td>:</td>
-                        <td><input type="file" name="foto" id = "foto"></td>
+                        <td><input type="file" name="foto" id = "foto"value="<?=$mhs[6]?>"></td>
                     </tr>
                     <tr>
                         <td colspan="3" align="center">
-                            <input type="submit"name = "submit" value="Kirim Data" style="padding: 10px 20px;">
+                            <input type="submit"name = "submit" value="Ubah Data" style="padding: 10px 20px;">
                         </td>
                     </tr>
                 </table>

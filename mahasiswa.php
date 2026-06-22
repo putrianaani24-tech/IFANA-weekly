@@ -58,20 +58,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td align="center"><?= $mhs[0] ?></td>
+                        <td align="center"><?= $no ?></td>
                         <td><?php echo $mhs [1]?></td>
                         <td align="center"><?= $mhs[2] ?></td>
                         <td align="center"><?= $mhs[3] ?></td>
                         <td align="center"><?= $mhs[4] ?></td>
                         <td><?= $mhs[5] ?></td>
-                        <td><img src="assets/images/<?= $mhs[5] ?>" width="50px" height="50px"/></td>
+                        <td><img src="assets/images/<?= $mhs[6] ?>" width="50px" height="50px"/></td>
                     <td>
-                    <a href="ubahdata.php" stlye=""><button>Edit</button></a> 
-                    <a href="hapusdata.php" ><button>Hapus</button></a>
+                    <a href="ubahdata.php?id=<?= $mhs[0]?>" stlye=""><button>Edit</button></a> 
+                    <a href="hapusdata.php?id=<?= $mhs[0] ?>"onclick="return confirm('Yaqueeenn')"
+                     ><button>Hapus</button></a>
                     </td>
                     </tr>
                 </tbody>
                 <?php
+                 $no++;
                  }
                 ?>
     </table>
