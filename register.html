@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - WEB INFORMATIKA 2026</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="register">
+    <header>
+        <h1>WEB INFORMATIKA ANA 2026</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+        <a href="mahasiswa.html">Data Mahasiswa</a>
+        <a href="login.html" style="font-weight: bold; text-decoration: underline;">Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>Register Akun Baru</h3>
+            <form action="login.html" method="POST">
+                <div style="margin-bottom: 15px; text-align: left;">
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" required>
+                </div>
+                
+                <div style="margin-bottom: 15px; text-align: left;">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" required>
+                </div>
+
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <label for="confirm_password">Konfirmasi Password:</label><br>
+                    <input type="password" id="confirm_password" name="confirm_password" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" required>
+                </div>
+                
+                <button type="submit" style="padding: 10px 20px; cursor: pointer; width: 100%;">Daftar</button>
+            </form>
+            
+            <p style="margin-top: 20px;">Sudah punya akun? <a href="login.html" style="color: blue;">Login di sini</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
